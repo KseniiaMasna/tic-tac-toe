@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Shizuru&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Shizuru&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    font-family: "Atma", system-ui;
+    font-size: large;
+}
+
+h1{
+    padding: 24px;
+    text-align: center;
+}
+
+p{
+    padding: 24px;
+    letter-spacing: 0.5px;
+}
+
+button{
+    padding: 8px;
+    font-family: "Atma", system-ui;
+    background-color: transparent;
+    padding: 8px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+    font-size: large;
+}
+
+.board{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 500px;
+    width: 500px;
+}
+
+.cell{
+    border: 1px solid grey;
+    font-size: 6rem;
+    font-family: "Shizuru", system-ui;
+    font-weight: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: rgb(77, 77, 77);
+}
+
+#c1, #c2, #c3{
+    border-top-style: none;
+}
+#c3, #c6, #c9{
+    border-right-style: none;
+}
+#c7, #c8, #c9{
+    border-bottom-style: none;
+}
+#c1, #c4, #c7{
+    border-left-style: none;
+}
+

@@ -71,11 +71,18 @@ const resetData = () => {
         cell.innerText = ''
         
     })  
-    message.innerText = 'The restart button is over here...';                
+    message.innerText = `Let's start!`;                
     X.length = 0;  
     O.length = 0;    
     move = 0;   
     generateBoard();
+    document.querySelector('.board').style.opacity = 1; 
+}
+
+//Function to make the board disabled
+const disableBoard = () => {
+    board.length = 0;
+    document.querySelector('.board').style.opacity = 0.5; 
 }
 
 //Function to make move
@@ -84,13 +91,16 @@ const makeMove = (cell) => {
     if (checkMove(cell)){                
         if (move % 2 !== 0){
             message.innerText = 'Game over. X won!'
+            disableBoard();            
             return
         } else if (move % 2 === 0){
             message.innerText = 'Game over. O won!'
+            disableBoard();            
             return
         }
     } else if (move === 9){
         message.innerText = 'Draw!'
+        disableBoard();
         return
     }
 
@@ -107,11 +117,15 @@ document.addEventListener('click', e => {
             
             
             
+            
             //computer move
             let cellComputer = moveRandom(board)                       
             
             bookCell(board, cellComputer)  
-            makeMove(cellComputer)  
+            setTimeout(() => {
+                makeMove(cellComputer)
+            }, 350
+            ) 
         }
     })
     if(e.target.matches('button')){
